@@ -93,5 +93,5 @@ def wigner_plot(psi_x0, x, y, dx, dy, k0_ft_y, t_max, view, limit, save_fig = Fa
     #saving the frame
     if save_fig == True:
         plt.savefig(f'wigner_frames/density_{frame_num}', dpi=300)
-        
-    plt.show()
+    else:  
+        plt.show()
