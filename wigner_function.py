@@ -2,10 +2,12 @@ import numpy as np
 from matplotlib import pyplot as plt, cm, colors
 from scipy.fftpack import fft,ifft
 from scipy.ndimage import shift
-from matplotlib.ticker import LinearLocator
-from mpl_toolkits.mplot3d import Axes3D
+import os
 
-def wigner_plot(psi_x0, x, y, dx, dy, k0_ft_y):
+def wigner_plot(psi_x0, x, y, dx, dy, k0_ft_y, t_max, view, limit, save_fig = False, frame_num = None):
+    if save_fig == True:
+        assert frame_num is not None, "Please provide framenumber if saving"
+        
     x, y = map(np.asarray, (x, y))
     
     #setting the values of psi(x+y)
@@ -39,7 +41,16 @@ def wigner_plot(psi_x0, x, y, dx, dy, k0_ft_y):
     
     wigner = np.real(wigner)
     
-    #plotting
+    #creating a folder for the frames
+    #we will use these frames to animate
+    if save_fig == True:
+        try:
+            os.mkdir(os.path.join(os.getcwd(),'wigner_frames'))
+        except FileExistsError:
+            print("Frames folder found, overwritting")
+    
+    #plotting:
+    
     #3D surface plot
     fig = plt.figure(figsize=(8,6))
     ax = fig.add_subplot(111, projection='3d')
@@ -47,18 +58,40 @@ def wigner_plot(psi_x0, x, y, dx, dy, k0_ft_y):
     x_smaller = x[int(24*(1/dx)):int(-25*(1/dx))]
     X, Y = np.meshgrid(x_smaller,y_smaller)
     Z = wigner[int(79*(1/dy)):int(-80*(1/dy)),int(24*(1/dx)):int(-25*(1/dx))]
-    ax.set_xlabel('x')
-    ax.set_ylabel('k')
-    ax.set_zlabel('wigner')
+    ax.set_zlim3d(-limit, limit)
+    ax.set_zticks(np.arange(-limit, limit+1, 5.0))
+    ax.set_xlabel('q')
+    ax.set_ylabel('p')
+    ax.set_zlabel('W(q,p)')
+    if frame_num is not None:
+        if frame_num == 0:
+            ax.set_title('t=%.2f' %(0))
+        else:
+            ax.set_title('t=%.2f' %(10*(int(frame_num)/int(t_max))))
     surf = ax.plot_surface(X,Y,Z)
-    fig.colorbar(surf, shrink = 0.25)
-    ax.view_init(azim = 230)
+#     fig.colorbar(surf, shrink = 0.25)
+    ax.view_init(azim = view)
+    
+    #saving the frame
+    if save_fig == True:
+        plt.savefig(f'wigner_frames/3d_{frame_num}', dpi=300)
     
     #density plot
     fig = plt.figure(figsize = (6,5))
     plt.pcolormesh(X, Y, Z, shading='auto')
-    plt.clim(-np.max(wigner), np.max(wigner))
-#     plt.colorbar()
-    plt.xlabel('x')
-    plt.ylabel('k', rotation = 0)
+    plt.clim(-limit, limit)
+    cbar = plt.colorbar()
+    cbar.set_label('W(q,p)')
+    plt.xlabel('q')
+    plt.ylabel('p', rotation = 0)
+    if frame_num is not None:
+        if frame_num == 0:
+            plt.title('t=%.2f' %(0))
+        else:
+            plt.title('t=%.2f' %(10*(int(frame_num)/int(t_max))))
+   
+    #saving the frame
+    if save_fig == True:
+        plt.savefig(f'wigner_frames/density_{frame_num}', dpi=300)
+        
     plt.show()
