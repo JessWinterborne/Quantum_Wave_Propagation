@@ -6,8 +6,7 @@ from scipy.fftpack import fft,ifft
 from matplotlib import rc
 rc('animation', html='jshtml')
 
-
-def save_wave(xlim, ylim, S, frames, dt, N_steps, name, save = True):
+def save_wave(xlim, ylim, S, frames, dt, N_steps, name, scaling, save = True):
     fig = plt.figure(figsize = (10,8), dpi=300)
     ax = fig.add_subplot(111, xlim=xlim, ylim=ylim)
     #have subplot so we can add in a plot for the momentum if we wanted (see below)
@@ -29,7 +28,7 @@ def save_wave(xlim, ylim, S, frames, dt, N_steps, name, save = True):
         except FileExistsError:
             print("Frames folder found, overwritting")
     def animate(i):
-        psi_x_line.set_data(S.x, 5*abs(S.psi_x)**2)
+        psi_x_line.set_data(S.x, scaling*abs(S.psi_x)**2)
         #factor in front just scales the wave function up
         V_x_line.set_data(S.x, S.V_x)
         title.set_text('t=%.2f' %S.t)

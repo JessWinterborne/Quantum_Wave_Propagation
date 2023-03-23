@@ -10,6 +10,8 @@ def wigner_plot(psi_x0, x, y, dx, dy, k0_ft_y, t_max, view, limit, save_fig = Fa
         
     x, y = map(np.asarray, (x, y))
     
+    #getting rid of for loops could be one way of speeding it up
+    
     #setting the values of psi(x+y)
     psi_x0_plus = np.zeros((len(y),len(x)), dtype=complex)
     for i in range(len(y)):
@@ -74,7 +76,9 @@ def wigner_plot(psi_x0, x, y, dx, dy, k0_ft_y, t_max, view, limit, save_fig = Fa
     
     #saving the frame
     if save_fig == True:
-        plt.savefig(f'wigner_frames/3d_{frame_num}', dpi=300)
+        plt.savefig(f'wigner_frames/3d_{frame_num}', dpi=100)
+        
+    #try change dpi
     
     #density plot
     fig = plt.figure(figsize = (6,5))
@@ -92,6 +96,6 @@ def wigner_plot(psi_x0, x, y, dx, dy, k0_ft_y, t_max, view, limit, save_fig = Fa
    
     #saving the frame
     if save_fig == True:
-        plt.savefig(f'wigner_frames/density_{frame_num}', dpi=300)
+        plt.savefig(f'wigner_frames/density_{frame_num}', dpi=100)
     else:  
         plt.show()
