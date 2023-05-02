@@ -10,6 +10,19 @@ In the 'Final_Results' notebook, we detail the different scenarios and variables
 
 We link here the webpage containing all the animation scenarios set out below [https://jesswinterborne.github.io/Quantum_Wave_Propagation/].
 
+### Cat State
+
+#### Wave function animation of a cat state
+
+{% include youtube.html id="BDAx2-u0QFk" %}
+
+#### Wigner function animation of a cat state in a denisty plot
+
+{% include youtube.html id="c35fBaiUYYA" %}
+
+#### Wigner function animation of a cat state in a surface plot
+
+{% include youtube.html id="_uGlhPhpoCQ" %}
 
 ### Single Gaussian Potential
 
@@ -164,17 +177,4 @@ We link here the webpage containing all the animation scenarios set out below [h
 
 {% include youtube.html id="FFpDXfsLiMw" %}
 
-### Cat State
-
-#### Wave function animation of a cat state
-
-{% include youtube.html id="BDAx2-u0QFk" %}
-
-#### Wigner function animation of a cat state in a denisty plot
-
-{% include youtube.html id="c35fBaiUYYA" %}
-
-#### Wigner function animation of a cat state in a surface plot
-
-{% include youtube.html id="_uGlhPhpoCQ" %}
 
