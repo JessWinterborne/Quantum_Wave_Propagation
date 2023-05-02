@@ -8,6 +8,8 @@ In the 'Final_Results' notebook, we detail the different scenarios and variables
 
 ## Videos
 
+We link here the webpage containing all the animation scenarios set out below [https://jesswinterborne.github.io/Quantum_Wave_Propagation/].
+
 ### Single Gaussian Potential
 
 #### Wave function animation interacting with a single Gaussian potential with a height of $V_{0}$, where the energy of the wave is such that $E < V_{0}$.
@@ -120,7 +122,7 @@ In the 'Final_Results' notebook, we detail the different scenarios and variables
 
 {% include youtube.html id="5iS5a6MeGSA" %}
 
-#### Wigner function animation interacting with a double Gaussian with unequal heights of $V_{0}$ and $V_{1]$ respectively, where the energy of the wave is such that $E < V_{0}$.
+#### Wigner function animation interacting with a double Gaussian with unequal heights of $V_{0}$ and $V_{1}$ respectively, where the energy of the wave is such that $E < V_{0}$.
 
 {% include youtube.html id="lMI5rrMcHYs" %} 
 
