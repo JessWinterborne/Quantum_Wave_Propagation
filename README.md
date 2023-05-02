@@ -22,7 +22,7 @@ In the 'Final_Results' notebook, we detail the different scenarios and variables
 
 {% include youtube.html id="U-0O3oNQdQQ" %}
 
-#### Wigner function animation interacting with a single Gaussian potential with a height of $V_{0}$, where the energy of the wave is such that $E<V_{0}$.
+#### Wigner function animation interacting with a single Gaussian potential with a height of $V_{0}$, where the energy of the wave is such that $E < V_{0}$.
 
 {% include youtube.html id="RILLYULeP7s" %}
 
@@ -128,7 +128,7 @@ In the 'Final_Results' notebook, we detail the different scenarios and variables
 
 {% include youtube.html id="I3rNo57vIzA" %}
 
-#### Wigner function animation interacting with a double Gaussian with unequal heights of $V_{0}$ and $V_{1}$ respectively, where the energy of the wave is such that $V_{0}<E<V_{1}$.
+#### Wigner function animation interacting with a double Gaussian with unequal heights of $V_{0}$ and $V_{1}$ respectively, where the energy of the wave is such that $V_{0} < E < V_{1}$.
 
 {% include youtube.html id="MoPRqTOPW_Y" %} 
 
