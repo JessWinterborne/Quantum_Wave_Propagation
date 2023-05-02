@@ -26,7 +26,7 @@ We link here the webpage containing all the animation scenarios set out below [h
 
 ### Single Gaussian Potential
 
-#### Wave function animation interacting with a single Gaussian potential with a height of $$V_{0}$$, where the energy of the wave is such that $$E < V_{0}$$.
+#### Wave function animation interacting with a single Gaussian potential with a height of $V_{0}$, where the energy of the wave is such that $E < V_{0}$.
 
 {% include youtube.html id="RlOJRSl7f7I" %}
 
