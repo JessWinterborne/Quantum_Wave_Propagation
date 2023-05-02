@@ -7,7 +7,7 @@ from matplotlib import rc
 rc('animation', html='jshtml')
 
 def save_wave(xlim, ylim, S, frames, dt, N_steps, name, scaling, save = True):
-    fig = plt.figure(figsize = (10,8), dpi=300)
+    fig = plt.figure(dpi=300)
     ax = fig.add_subplot(111, xlim=xlim, ylim=ylim)
     #have subplot so we can add in a plot for the momentum if we wanted (see below)
     psi_x_line, = ax.plot([], [], c='r', label=r'$|\psi(q)|^2$')
