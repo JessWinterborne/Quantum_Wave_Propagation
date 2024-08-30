@@ -1,4 +1,4 @@
-# Wave_Animation
+# Quantum_Wave_Propagation
  
 ## Overview
 
